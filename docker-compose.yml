@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  fastapi-nano:
+    container_name: "python-template"
+    image: "python-template:latest"
+    env_file:
+      - .env
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      labels:
+        - python-template
+    volumes:
+        - .:/code
+    ports:
+      - 5000:5000
